@@ -16,7 +16,6 @@ const getData = async () => {
         url,
         responseType: 'arraybuffer'
     });
-    require('fs').writeFileSync('data.zip', response.data);
     const data = await zip.loadAsync(response.data);
     const file = data.files["PrixCarburants_instantane.xml"];
     let text = await file.async("nodebuffer");
