@@ -1,0 +1,25 @@
+{
+  "name": "opendata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@basisai/remote-zip": "^0.2.7",
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.3",
+    "express": "^4.18.1",
+    "jszip": "^3.10.0",
+    "node-libcurl": "^2.3.4",
+    "request": "^2.88.2",
+    "simple-xml-to-json": "^1.0.9",
+    "transform-coordinates": "^1.0.0",
+    "xml2js": "^0.4.23",
+    "xml2json": "^0.12.0"
+  }
+}

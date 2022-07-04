@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prix de l'essence - Thonon</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/chart.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="div-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center center-screen">
+                    <div class="dropdown mb-5">
+                        <input type="text" class="form-control" placeholder="Chercher une ville" id="search">
+                        <div class="autocomplete" style="position: absolute; z-index: 999; display: flex; flex-direction: column" id="autocomplete_re"></div>
+                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Choisir un type de carburant
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Gazole</a>
+                            <a class="dropdown-item" href="#">E85</a>
+                            <a class="dropdown-item" href="#">E10</a>
+                            <a class="dropdown-item" href="#">SP98</a>
+                            <a class="dropdown-item" href="#">SP95</a>
+                            <a class="dropdown-item" href="#">GPLc</a>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Addresse</th>
+                            <th scope="col">Type</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

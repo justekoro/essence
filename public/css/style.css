@@ -1,0 +1,25 @@
+.div-blue{
+    background-color: #0099ff;
+    color: #fff;
+    height: 100vh;
+}
+.test {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+.map {
+    height: 550px;
+    width: 100%;
+}
+.center-screen {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    padding: 0 30px;
+}
+body {
+    overflow: hidden;
+}
