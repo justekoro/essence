@@ -4,13 +4,11 @@ const url = "https://donnees.roulez-eco.fr/opendata/instantane";
 const parser = require('xml2json');
 const zip = new jszip();
 const express = require('express');
-const dayjs = require("dayjs");
 const app = express();
 app.use(express.static('public'));
 
 let smallest = {};
 let villes = {}
-let lastChartUpdated = 0;
 let knownTypes = [];
 const getData = async () => {
     const response = await axios({
@@ -70,7 +68,7 @@ const getData = async () => {
 
 app.get("/types", (req, res) => {
     res.json(knownTypes);
-})
+}) // Route non utilisée pour le moment, peut-être utilisée pour le futur
 
 app.get("/prix/:ville", (req, res) => {
     if (!villes[req.params.ville.toLowerCase()]) {
