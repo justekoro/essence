@@ -27,7 +27,7 @@ Le projet ne recueille pas de données de la part de l'utilisateur.
 <details>
 <summary>Le projet est public et son utilisation est gratuite. Néanmoins, si vous souhaitez financer le projet, plusieurs possibilités sont disponibles:</summary>
 <ul>
-<li><a href="https://buymeacoffe.com/justekoro">buymeacoffee</a></li>
+<li><a href="https://buymeacoffee.com/justekoro">buymeacoffee</a></li>
 <li>Solana: koroAXzMAq6mkgRyjdUhWZiFHJ9SjsjtqTdybGbtPRN</li>
 <li>Ethereum: 0x3173F2bE428F53E03cFDC5A9FBaA02d89b0cBdc8</li>
 </ul>
