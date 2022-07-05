@@ -1,6 +1,6 @@
 .div-b{
     background: url("../img/background.png") no-repeat center;
-    background: black;
+    background-color: black;
     color: #fff;
     height: 100vh;
 
@@ -28,15 +28,4 @@ body {
 }
 .table {
     color: white;
-}
-.form-control {
-    width: 60vw;
-    float: left;
-}
-.dropdown-toggle {
-    width: 20vw;
-    float: right;
-}
-.autocomplete a {
-    border: 2px solid black;
 }
