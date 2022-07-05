@@ -1,7 +1,9 @@
-.div-blue{
-    background-color: #0099ff;
+.div-b{
+    background: url("../img/background.png") no-repeat center fixed;
     color: #fff;
     height: 100vh;
+
+    text-align: center;
 }
 .test {
     position: absolute;
@@ -22,4 +24,18 @@
 }
 body {
     overflow: hidden;
+}
+.table {
+    color: white;
+}
+.form-control {
+    width: 60vw;
+    float: left;
+}
+.dropdown-toggle {
+    width: 20vw;
+    float: right;
+}
+.autocomplete a {
+    border: 2px solid black;
 }
