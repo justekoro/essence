@@ -239,9 +239,11 @@
 
 // Not-Found-Container
 .Not-found-Container {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
 
   .Text {
