@@ -45,7 +45,7 @@ const ResultComponents = ({ data }) => {
           {/* Update Date */}
           <div className="Update-Container">
             <div className="">mis à jour le: </div>
-            <Moment className="moment" format="YYYY/MM/DD">
+            <Moment className="moment" format="DD/MM/YYYY">
               {Date.now()}
             </Moment>
           </div>
