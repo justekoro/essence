@@ -41,10 +41,11 @@ function App() {
   }, []);
 
   // filter data & submit function
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    if (searchValue === "") return;
     // filter data
     const filtered = data.filter(
-      (item) => item.ville === searchValue && item[`${typedFuel}`]
+      (item) => item.ville === searchValue && item[`${e ? e : typedFuel}`]
     );
     // reforming data for table result
     let result = [];
@@ -52,8 +53,8 @@ function App() {
       const Res = {
         ville: element.ville,
         adresse: element.adresse,
-        nom: element[`${typedFuel}`].nom,
-        valeur: element[`${typedFuel}`].valeur,
+        nom: element[`${e ? e : typedFuel}`].nom,
+        valeur: element[`${e ? e : typedFuel}`].valeur,
       };
 
       result.push(Res);
@@ -104,13 +105,16 @@ function App() {
                   <InputSearch
                     value={searchValue}
                     cityList={cityList}
-                    onChange={(event, value) => setSearchValue(value)}
+                    onChange={(event, value) => {
+                      setSearchValue(value);
+                    }}
                   />
                   {/* type fuel input */}
                   <SelectTypeFuel
                     value={typedFuel}
                     onChange={(e) => {
                       setTypedFuel(e.target.value);
+                      handleSubmit(e.target.value);
                     }}
                   />
                 </div>
@@ -118,7 +122,7 @@ function App() {
                 <SubmitButton onClick={() => handleSubmit()} />
               </div>
               {/* Results */}
-              <ResultComponents data={typedData}/>
+              <ResultComponents data={typedData} />
             </div>
           )}
         </main>
