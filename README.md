@@ -15,10 +15,18 @@ git clone git@github.com:justekoro/essence.git
 ```
 
 ### Installation des dépendances
-Rendez-vous dans le dossier créé lors du clonage du projet, et tapez la commande `npm install`. Cela installera les modules nécessaires pour que le projet fonctionne.
+
+#### Api
+Dans le dossier 'api' taper `npm install` ou `pnpm install`.
+
+#### Client
+Rendez-vous dans le dossier créé lors du clonage du projet, et tapez la commande `npm install` ou `pnpm install` pour de meilleurs performance. Cela installera les modules nécessaires pour que le projet fonctionne.
+
+### Lancement de l'api
+Pour fonctionner correctement, l'api doit être lancée. Pour cela, il suffit de lancer le serveur en console en tapant la commande `npm start` || `pnpm start` dans le dossier api.
 
 ### Lancement du serveur
-Dans le même dossier, vous pouvez lancer le serveur en tapant la commande `npm start` ou `node index`.
+Dans le le dossier racine, vous pouvez lancer le serveur en tapant la commande `npm start` ou `pnpm start`.
 
 ## Données
 Le projet ne recueille pas de données de la part de l'utilisateur.
