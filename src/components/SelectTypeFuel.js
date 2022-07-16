@@ -13,7 +13,6 @@ const SelectTypeFuel = ({ value, onChange }) => {
           value={value}
           onChange={onChange}
         >
-          <MenuItem value={"All"}>Tout</MenuItem>
           <MenuItem value={"Gazole"}>Gazole</MenuItem>
           <MenuItem value={"E85"}>E85</MenuItem>
           <MenuItem value={"E10"}>E10</MenuItem>

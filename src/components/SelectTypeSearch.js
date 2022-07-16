@@ -1,7 +1,5 @@
 import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
@@ -17,9 +15,7 @@ export default function SelectTypeSearch({ onChange, value }) {
           onChange={onChange}
         >
           <MenuItem value={"City"}>Ville</MenuItem>
-          <MenuItem value={"Postal-Code"}>code Postal</MenuItem>
-          <MenuItem value={"Dep"}>Département</MenuItem>
-          <MenuItem value={"Dep-Code"}>Code de Département</MenuItem>
+          <MenuItem value={"Postal-Code"}>Code Postal</MenuItem>
         </Select>
       </FormControl>
     </div>
