@@ -16,6 +16,8 @@ specifiers:
   react-dom: ^18.2.0
   react-moment: ^1.1.2
   react-scripts: 5.0.1
+  react-test-renderer: ^18.2.0
+  react-window: ^1.8.7
   sass: ^1.53.0
   styled-components: ^5.3.5
   superagent: ^8.0.0
@@ -37,6 +39,8 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-moment: 1.1.2_moment@2.29.3+react@18.2.0
   react-scripts: 5.0.1_react@18.2.0+sass@1.53.0
+  react-test-renderer: 18.2.0_react@18.2.0
+  react-window: 1.8.7_biqbaboplfbrettd7655fr4n2y
   sass: 1.53.0
   styled-components: 5.3.5_biqbaboplfbrettd7655fr4n2y
   superagent: 8.0.0
@@ -7228,6 +7232,10 @@ packages:
       fs-monkey: 1.0.3
     dev: false
 
+  /memoize-one/5.2.1:
+    resolution: {integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==}
+    dev: false
+
   /merge-descriptors/1.0.1:
     resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
     dev: false
@@ -8856,6 +8864,27 @@ packages:
       - webpack-plugin-serve
     dev: false
 
+  /react-shallow-renderer/16.15.0_react@18.2.0:
+    resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      object-assign: 4.1.1
+      react: 18.2.0
+      react-is: 18.2.0
+    dev: false
+
+  /react-test-renderer/18.2.0_react@18.2.0:
+    resolution: {integrity: sha512-JWD+aQ0lh2gvh4NM3bBM42Kx+XybOxCpgYK7F8ugAlpaTSnWsX+39Z4XkOykGZAHrjwwTZT3x3KxswVWxHPUqA==}
+    peerDependencies:
+      react: ^18.2.0
+    dependencies:
+      react: 18.2.0
+      react-is: 18.2.0
+      react-shallow-renderer: 16.15.0_react@18.2.0
+      scheduler: 0.23.0
+    dev: false
+
   /react-transition-group/4.4.2_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg==}
     peerDependencies:
@@ -8866,6 +8895,19 @@ packages:
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /react-window/1.8.7_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-JHEZbPXBpKMmoNO1bNhoXOOLg/ujhL/BU4IqVU9r8eQPcy5KQnGHIHDRkJ0ns9IM5+Aq5LNwt3j8t3tIrePQzA==}
+    engines: {node: '>8.0.0'}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.18.6
+      memoize-one: 5.2.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false

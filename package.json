@@ -18,6 +18,8 @@
     "react-dom": "^18.2.0",
     "react-moment": "^1.1.2",
     "react-scripts": "5.0.1",
+    "react-test-renderer": "^18.2.0",
+    "react-window": "^1.8.7",
     "sass": "^1.53.0",
     "styled-components": "^5.3.5",
     "superagent": "^8.0.0",
