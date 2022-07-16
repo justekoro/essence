@@ -1,3 +1,4 @@
+[![test](https://github.com/justekoro/essence/actions/workflows/test.yml/badge.svg)](https://github.com/Jokay03J/essence/actions/workflows/test.yml)
 # [ess.krbk.dev](https://ess.krbk.dev)
 Un outil permettant de connaître le prix de l'essence le plus bas dans une ville.
 
