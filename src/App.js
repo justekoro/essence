@@ -41,11 +41,13 @@ function App() {
   }, []);
 
   // filter data & submit function
-  const handleSubmit = (e) => {
-    if (searchValue === "") return;
+  const handleSubmit = ({ fuel, search }) => {
+    if (searchValue === "" || search === "") return;
     // filter data
-    const filtered = data.filter(
-      (item) => item.ville === searchValue && item[`${e ? e : typedFuel}`]
+    const filtered = data.filter((item) =>
+      item.ville === search
+        ? search
+        : searchValue && item[`${fuel ? fuel : typedFuel}`]
     );
     // reforming data for table result
     let result = [];
@@ -53,8 +55,8 @@ function App() {
       const Res = {
         ville: element.ville,
         adresse: element.adresse,
-        nom: element[`${e ? e : typedFuel}`].nom,
-        valeur: element[`${e ? e : typedFuel}`].valeur,
+        nom: element[`${fuel ? fuel : typedFuel}`].nom,
+        valeur: element[`${fuel ? fuel : typedFuel}`].valeur,
       };
 
       result.push(Res);
@@ -107,6 +109,8 @@ function App() {
                     cityList={cityList}
                     onChange={(event, value) => {
                       setSearchValue(value);
+                      // handle automately re-render result and change search
+                      handleSubmit({ search: value });
                     }}
                   />
                   {/* type fuel input */}
@@ -114,7 +118,8 @@ function App() {
                     value={typedFuel}
                     onChange={(e) => {
                       setTypedFuel(e.target.value);
-                      handleSubmit(e.target.value);
+                      // handle automately re-render result and change type fuel
+                      handleSubmit({ fuel: e.target.value });
                     }}
                   />
                 </div>
