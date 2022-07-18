@@ -98,7 +98,7 @@ function App() {
             <div>
               {/* Title */}
               <div className="Title-Container">
-                <h1 className="Title">⛽ essence tracker</h1>
+                <h1 className="Title">⛽ Essence tracker</h1>
               </div>
               {/* All Inputs */}
               <div className="Inputs-Container">
