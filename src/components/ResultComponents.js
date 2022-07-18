@@ -34,7 +34,7 @@ const ResultComponents = ({ data }) => {
       {data.length === 0 ? (
         <div className="Not-found-Container">
           <ErrorOutlineIcon sx={{ color: "red", height: 40, width: 40 }} />
-          <div className="Text">Aucune donnée trouver.</div>
+          <div className="Text">Aucune donnée trouvée.</div>
         </div>
       ) : (
         <div>
@@ -44,7 +44,7 @@ const ResultComponents = ({ data }) => {
           </div>
           {/* Update Date */}
           <div className="Update-Container">
-            <div className="">mis à jour le: </div>
+            <div className="">Mis à jour le: </div>
             <Moment className="moment" format="DD/MM/YYYY">
               {Date.now()}
             </Moment>
