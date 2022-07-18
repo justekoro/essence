@@ -7,21 +7,21 @@ const ResultComponents = ({ data }) => {
 
   const columns = [
     {
-      name: "prix",
+      name: "Prix",
       selector: (row) => {
         return row.valeur;
       },
       sortable: true,
     },
     {
-      name: "adresse",
+      name: "Adresse",
       selector: (row) => {
         return row.adresse;
       },
       sortable: true,
     },
     {
-      name: "type",
+      name: "Type",
       selector: (row) => {
         return row.nom;
       },
