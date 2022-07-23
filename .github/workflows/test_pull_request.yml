@@ -1,7 +1,7 @@
-name: test
+name: test pull request
 
 on:
-  push:
+  pull_request:
     branches: ["*"]
   workflow_dispatch:
 
