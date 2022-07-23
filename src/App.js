@@ -1,6 +1,6 @@
 import "./styles/App.scss";
 import superagent from "superagent";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useEffect } from "react";
 import InputSearch from "./components/InputSearch";
 import SelectTypeFuel from "./components/SelectTypeFuel";
@@ -18,12 +18,35 @@ function App() {
   const [isError, setIsError] = useState(false);
   const [cityList, setCityList] = useState([]);
 
+    // filter data & submit function
+    const handleSubmit = useCallback(() => {
+      if (searchValue === "") return;
+      // filter data
+      const filtered = data.filter(
+        (item) => item.ville === searchValue && item[`${typedFuel}`]
+      );
+      // reforming data for table result
+      let result = [];
+      for (let element of filtered) {
+        const Res = {
+          ville: element.ville,
+          adresse: element.adresse,
+          nom: element[`${typedFuel}`].nom,
+          valeur: element[`${typedFuel}`].valeur,
+        };
+
+        result.push(Res);
+      }
+      setTypedData(result);
+      console.log(result);
+    }, [searchValue, data, typedFuel]);
+
   // fetch data from API
   useEffect(() => {
     async function fetchData() {
       try {
         await superagent
-          .get(`${process.env.REACT_APP_URL_API}/api`)
+          .get(`http://192.168.1.60:5000/api`)
           .then((response) => {
             if (!response.body || response.body.length === 0)
               return setIsError(true);
@@ -40,29 +63,12 @@ function App() {
     fetchData();
   }, []);
 
-  // filter data & submit function
-  const handleSubmit = ({ fuel, search }) => {
-    if (searchValue === "" || search === "") return;
-    // filter data
-    const filtered = data.filter((item) =>
-      item.ville === search
-        ? search
-        : searchValue && item[`${fuel ? fuel : typedFuel}`]
-    );
-    // reforming data for table result
-    let result = [];
-    for (let element of filtered) {
-      const Res = {
-        ville: element.ville,
-        adresse: element.adresse,
-        nom: element[`${fuel ? fuel : typedFuel}`].nom,
-        valeur: element[`${fuel ? fuel : typedFuel}`].valeur,
-      };
-
-      result.push(Res);
-    }
-    setTypedData(result);
-  };
+  useEffect(() => {
+    handleSubmit()  
+    return () => {
+      // clean up
+    };
+  }, [searchValue, typedFuel, handleSubmit]);
 
   return (
     <div>
@@ -110,16 +116,14 @@ function App() {
                     onChange={(event, value) => {
                       setSearchValue(value);
                       // handle automately re-render result and change search
-                      handleSubmit({ search: value });
                     }}
                   />
                   {/* type fuel input */}
                   <SelectTypeFuel
                     value={typedFuel}
-                    onChange={(e) => {
+                    onChange={async (e) => {
                       setTypedFuel(e.target.value);
                       // handle automately re-render result and change type fuel
-                      handleSubmit({ fuel: e.target.value });
                     }}
                   />
                 </div>
