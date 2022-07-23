@@ -46,7 +46,7 @@ function App() {
     async function fetchData() {
       try {
         await superagent
-          .get(`http://192.168.1.60:5000/api`)
+          .get(`${process.env.REACT_APP_URL_API}/api`)
           .then((response) => {
             if (!response.body || response.body.length === 0)
               return setIsError(true);
