@@ -2,8 +2,39 @@ import React from "react";
 import DataTable from "react-data-table-component";
 import Moment from "react-moment";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
+import AlertDialog from "./DialogAdress";
+import "../styles/App.scss";
 
 const ResultComponents = ({ data }) => {
+  const customStyles = {
+    headRow: {
+      style: {
+        border: "none",
+      },
+    },
+    headCells: {
+      style: {
+        color: "#202124",
+        fontSize: "14px",
+      },
+    },
+    rows: {
+      style: {
+        overflow: "visible",
+      },
+      highlightOnHoverStyle: {
+        backgroundColor: "rgb(230, 244, 244)",
+        borderBottomColor: "#FFFFFF",
+        borderRadius: "25px",
+        outline: "1px solid #FFFFFF",
+      },
+    },
+    pagination: {
+      style: {
+        border: "none",
+      },
+    },
+  };
 
   const columns = [
     {
@@ -16,14 +47,10 @@ const ResultComponents = ({ data }) => {
     {
       name: "Adresse",
       selector: (row) => {
-        return row.adresse;
-      },
-      sortable: true,
-    },
-    {
-      name: "Type",
-      selector: (row) => {
-        return row.nom;
+        return <div className="Adress-Container">
+          <div className="mobile"><AlertDialog adress={row.adresse} city={row.ville}/></div>
+          <div className="desktop">{row.adresse}</div>
+        </div>
       },
       sortable: true,
     },
@@ -40,7 +67,14 @@ const ResultComponents = ({ data }) => {
         <div>
           {/* results */}
           <div className="Results">
-            <DataTable pagination columns={columns} data={data} />
+            <DataTable
+              pagination
+              columns={columns}
+              data={data}
+              customStyles={customStyles}
+              highlightOnHover
+              pointerOnHover
+            />
           </div>
           {/* Update Date */}
           <div className="Update-Container">

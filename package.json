@@ -27,6 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "BUILD_PATH='./dist' react-scripts build",
+    "api": "cd ./api && node index.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/"

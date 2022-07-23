@@ -8,6 +8,6 @@ app.use(express.json());
 //routes
 app.use('/api', require('./routes/main-route'));
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3042, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 })
