@@ -5,7 +5,7 @@ dist
 /node_modules
 /.pnp
 .pnp.js
-/data
+/dump
 
 # testing
 /coverage
