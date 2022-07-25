@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node --max-old-space-size=1536 index.js"
+    "start": "node --max-old-space-size=2000 index.js"
   },
   "keywords": [],
   "author": "",
