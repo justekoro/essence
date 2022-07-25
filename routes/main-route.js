@@ -4,16 +4,11 @@
 const express = require("express");
 const route = express.Router();
 
-const fs = require("fs");
 // utils
 const getData = require("../utils/getData");
 
 route.get("/", async (req, res) => {
-  if(!fs.readFileSync("../bump/data.json")) {
-    await getData();
-  }
-  const file = fs.readFileSync("../bump/data.json");
-  const json = JSON.parse(file);
+  const json = await getData();
   // results variables
   let result = [];
   let listCityName = [];
