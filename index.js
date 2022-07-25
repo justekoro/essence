@@ -56,11 +56,10 @@ app.listen(process.env.PORT || 3042, function () {
       citiesFileOverride: 'cities15000',
       load: {
         admin1: true,
-        admin2: true,
-        admin3And4: true,
-        alternateNames: true,
+        admin2: false,
+        admin3And4: false,
+        alternateNames: false,
       },
-      countries: ["FR"],
       dumpDirectory: './dump',
     },
     function () {
