@@ -1,54 +1,27 @@
 {
-  "name": "essence",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.9.3",
-    "@emotion/styled": "^11.9.3",
-    "@mui/icons-material": "^5.8.4",
-    "@mui/material": "^5.8.7",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "moment": "^2.29.3",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-data-table-component": "^7.5.2",
-    "react-dom": "^18.2.0",
-    "react-moment": "^1.1.2",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "react-test-renderer": "^18.2.0",
-    "react-window": "^1.8.7",
-    "sass": "^1.53.0",
-    "styled-components": "^5.3.5",
-    "superagent": "^8.0.0",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "BUILD_PATH='./dist' react-scripts build",
-    "api": "cd ./api && node index.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx src/"
+    "start": "nodemon index.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "cron": "^2.1.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jszip": "^3.10.0",
+    "local-reverse-geocoder": "^0.12.1",
+    "xml-js": "^1.6.11",
+    "xml2json": "^0.12.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
