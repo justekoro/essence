@@ -6,7 +6,6 @@ dist
 /.pnp
 .pnp.js
 /data
-/dump
 
 # testing
 /coverage
