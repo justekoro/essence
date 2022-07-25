@@ -1,1 +1,1 @@
-web: npm i && node index.js
+web: npm run start
