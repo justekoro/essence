@@ -1,7 +1,6 @@
 const jszip = require("jszip");
 const parser = require("xml2json");
 const zip = new jszip();
-const fs = require("fs");
 
 const getData = async () => {
   const axios = require("axios").default;
@@ -17,7 +16,7 @@ const getData = async () => {
   text = text.toString("latin1");
   // convert it to json
   const json = JSON.parse(parser.toJson(text));
-  fs.writeFileSync("./dump/data.json", JSON.stringify(json));
+  return json;
 }
 
 module.exports = getData;
