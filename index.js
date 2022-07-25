@@ -12,18 +12,6 @@ const getData = require("./utils/getData");
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 
-// fetch and bump database
-let CronJob = require("cron").CronJob;
-let job = new CronJob(
-  "0 0 */5 * * *",
-  async function () {
-    await getData();
-  },
-  null,
-  true,
-  "Europe/Paris"
-);
-
 //routes
 app.use("/api", require("./routes/main-route"));
 
@@ -57,11 +45,6 @@ app.get("/geocode", function (req, res) {
   });
 });
 
-// start cron dump server
-job.start();
-getData();
-console.log("server data dumped");
-
 app.listen(process.env.PORT || 3042, function () {
   console.log('server is running on port ' + process.env.PORT || 3042);
   console.log('Initializing Geocoder…');
@@ -83,7 +66,7 @@ app.listen(process.env.PORT || 3042, function () {
     function () {
       console.log('Geocoder initialized and ready.');
       console.log('Endpoints:');
-      console.log(` - http://localhost:${process.env.PORT || 3042}/api`);
+      console.log(`- http://localhost:${process.env.PORT || 3042}/api`);
       console.log(`- http://localhost:${process.env.PORT || 3042}/geocode`);
       console.log('Examples:');
       console.log(
