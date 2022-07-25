@@ -17,7 +17,7 @@ const getData = async () => {
   text = text.toString("latin1");
   // convert it to json
   const json = JSON.parse(parser.toJson(text));
-  fs.writeFileSync("./data/data.json", JSON.stringify(json));
+  fs.writeFileSync("./dump/data.json", JSON.stringify(json));
 }
 
 module.exports = getData;

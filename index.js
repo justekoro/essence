@@ -77,7 +77,8 @@ app.listen(process.env.PORT || 3042, function () {
         admin3And4: true,
         alternateNames: true,
       },
-      countries: [],
+      countries: ["FR"],
+      dumpDirectory: './dump',
     },
     function () {
       console.log('Geocoder initialized and ready.');
