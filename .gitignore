@@ -5,6 +5,7 @@ dist
 /node_modules
 /.pnp
 .pnp.js
+.pnpm-debug.log
 
 # testing
 /coverage
