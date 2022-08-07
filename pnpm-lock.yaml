@@ -5,6 +5,7 @@ specifiers:
   '@emotion/styled': ^11.9.3
   '@mui/icons-material': ^5.8.4
   '@mui/material': ^5.8.7
+  '@mui/x-data-grid': ^5.15.1
   '@testing-library/jest-dom': ^5.16.4
   '@testing-library/react': ^13.3.0
   '@testing-library/user-event': ^13.5.0
@@ -18,6 +19,8 @@ specifiers:
   react-scripts: 5.0.1
   react-test-renderer: ^18.2.0
   react-window: ^1.8.7
+  recoil: ^0.7.4
+  recoil-persist: ^4.2.0
   sass: ^1.53.0
   styled-components: ^5.3.5
   superagent: ^8.0.0
@@ -28,6 +31,7 @@ dependencies:
   '@emotion/styled': 11.9.3_jhgplt4fmhans76oq3ok5iox2u
   '@mui/icons-material': 5.8.4_2t6qhahjtzgm5ommnqc4ufa6gy
   '@mui/material': 5.8.7_qsuhhlyfbpdicstla2jcf7xfmy
+  '@mui/x-data-grid': 5.15.1_qbhqe4a5otpmr24fxwr4j47bam
   '@testing-library/jest-dom': 5.16.4
   '@testing-library/react': 13.3.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/user-event': 13.5.0
@@ -41,6 +45,8 @@ dependencies:
   react-scripts: 5.0.1_react@18.2.0+sass@1.53.0
   react-test-renderer: 18.2.0_react@18.2.0
   react-window: 1.8.7_biqbaboplfbrettd7655fr4n2y
+  recoil: 0.7.4_biqbaboplfbrettd7655fr4n2y
+  recoil-persist: 4.2.0_recoil@0.7.4
   sass: 1.53.0
   styled-components: 5.3.5_biqbaboplfbrettd7655fr4n2y
   superagent: 8.0.0
@@ -2202,6 +2208,25 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-is: 17.0.2
+    dev: false
+
+  /@mui/x-data-grid/5.15.1_qbhqe4a5otpmr24fxwr4j47bam:
+    resolution: {integrity: sha512-KTWrXRvhtudhONrjanpmSijgvMfWGiuX83RZxBpVPdiM4h0furLtltpmk++V3inEcGUeEFEj1qfx4ssiTuNJtw==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.4.1
+      '@mui/system': ^5.4.1
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.18.6
+      '@mui/material': 5.8.7_qsuhhlyfbpdicstla2jcf7xfmy
+      '@mui/utils': 5.8.6_react@18.2.0
+      clsx: 1.2.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      reselect: 4.1.6
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -5587,6 +5612,10 @@ packages:
       duplexer: 0.1.2
     dev: false
 
+  /hamt_plus/1.0.2:
+    resolution: {integrity: sha512-t2JXKaehnMb9paaYA7J0BX8QQAY8lwfQ9Gjf4pg/mk4krt+cmwmU652HOoWonf+7+EQV97ARPMhhVgU1ra2GhA==}
+    dev: false
+
   /handle-thing/2.0.1:
     resolution: {integrity: sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==}
     dev: false
@@ -8778,6 +8807,31 @@ packages:
       picomatch: 2.3.1
     dev: false
 
+  /recoil-persist/4.2.0_recoil@0.7.4:
+    resolution: {integrity: sha512-MHVfML9GxJP3RpkKR4F5rp7DtvzIvjWhowtMao/b7h2k4afMio/4sMAdUtltIrDaeVegH0Iga8Sx5XQ3oD7CzA==}
+    peerDependencies:
+      recoil: ^0.7.2
+    dependencies:
+      recoil: 0.7.4_biqbaboplfbrettd7655fr4n2y
+    dev: false
+
+  /recoil/0.7.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-sCXvQGMfSprkNU4ZRkJV4B0qFQSURJMgsICqY1952WRlg66NMwYqi6n67vhnhn0qw4zHU1gHXJuMvRDaiRNFZw==}
+    peerDependencies:
+      react: '>=16.13.1'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      hamt_plus: 1.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /recursive-readdir/2.2.2:
     resolution: {integrity: sha512-nRCcW9Sj7NuZwa2XvH9co8NPeXUBhZP7CRKJtU+cS6PW9FpCIFoI5ib0NT1ZrbNuPoRy0ylyCaUL8Gih4LSyFg==}
     engines: {node: '>=0.10.0'}
@@ -8882,6 +8936,10 @@ packages:
 
   /requires-port/1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
+    dev: false
+
+  /reselect/4.1.6:
+    resolution: {integrity: sha512-ZovIuXqto7elwnxyXbBtCPo9YFEr3uJqj2rRbcOOog1bmu2Ag85M4hixSwFWyaBMKXNgvPaJ9OSu9SkBPIeJHQ==}
     dev: false
 
   /resolve-cwd/3.0.0:
