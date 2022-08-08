@@ -3,6 +3,7 @@ const app = express();
 require('dotenv').config('.env');
 const cors = require('cors');
 const geocoder = require('local-reverse-geocoder');
+
 let isGeocodeInitialized = false;
 
 // cors
