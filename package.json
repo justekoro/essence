@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "packageManager": "pnpm",
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node --max-old-space-size=2000 index.js",
