@@ -1,30 +1,27 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable default-case */
-const express = require("express");
-const route = express.Router();
+const {Router} = require('express');
+const route = new Router();
 
 // utils
-const getData = require("../utils/getData");
+const getData = require('../utils/getData');
 
-route.get("/", async (req, res) => {
+route.get('/', async (req, res) => {
   const json = await getData();
   // results variables
-  let result = [];
-  let listCityName = [];
+  const result = [];
+  const listCityName = [];
 
-  for (let element of json["pdv_liste"]["pdv"]) {
-    if (listCityName.includes(element["ville"].toLowerCase())) {
+  for (const element of json['pdv_liste']['pdv']) {
+    if (listCityName.includes(element['ville'].toLowerCase())) {
       continue;
     } else {
-      listCityName.push(element["ville"].toLowerCase());
+      listCityName.push(element['ville'].toLowerCase());
     }
   }
 
-  for (let element of json["pdv_liste"]["pdv"]) {
-    let price = element["prix"];
+  for (const element of json['pdv_liste']['pdv']) {
+    const price = element['prix'];
 
-    if (typeof price !== "object") {
+    if (typeof price !== 'object') {
       continue;
     } else {
       let gazole = null;
@@ -34,55 +31,55 @@ route.get("/", async (req, res) => {
       let sp98 = null;
       let glpc = null;
 
-      if (element["prix"].find) {
-        gazole = element["prix"].find((items) => {
-          return items.nom === "Gazole";
+      if (element['prix'].find) {
+        gazole = element['prix'].find((items) => {
+          return items.nom === 'Gazole';
         });
-        e10 = element["prix"].find((items) => {
-          return items.nom === "E10";
+        e10 = element['prix'].find((items) => {
+          return items.nom === 'E10';
         });
-        e85 = element["prix"].find((items) => {
-          return items.nom === "E85";
+        e85 = element['prix'].find((items) => {
+          return items.nom === 'E85';
         });
-        sp95 = element["prix"].find((items) => {
-          return items.nom === "SP95";
+        sp95 = element['prix'].find((items) => {
+          return items.nom === 'SP95';
         });
-        sp98 = element["prix"].find((items) => {
-          return items.nom === "SP98";
+        sp98 = element['prix'].find((items) => {
+          return items.nom === 'SP98';
         });
-        glpc = element["prix"].find((items) => {
-          return items.nom === "GLPc";
+        glpc = element['prix'].find((items) => {
+          return items.nom === 'GLPc';
         });
       } else {
-        switch (element["prix"]["nom"]) {
-          case "Gazole":
-            gazole = element["prix"]["valeur"];
+        switch (element['prix']['nom']) {
+          case 'Gazole':
+            gazole = element['prix']['valeur'];
             break;
-          case "E10":
-            e10 = element["prix"]["valeur"];
+          case 'E10':
+            e10 = element['prix']['valeur'];
             break;
-          case "E85":
-            e85 = element["prix"]["valeur"];
+          case 'E85':
+            e85 = element['prix']['valeur'];
             break;
-          case "SP95":
-            sp95 = element["prix"]["valeur"];
+          case 'SP95':
+            sp95 = element['prix']['valeur'];
             break;
-          case "SP98":
-            sp98 = element["prix"]["valeur"];
+          case 'SP98':
+            sp98 = element['prix']['valeur'];
             break;
-          case "GLPc":
-            glpc = element["prix"]["valeur"];
+          case 'GLPc':
+            glpc = element['prix']['valeur'];
             break;
         }
       }
 
       const Res = {
-        id: element["id"],
-        longitude: element["longitude"],
-        latitude: element["latitude"],
-        ville: element["ville"].toLowerCase(),
-        cp: element["cp"],
-        adresse: element["adresse"],
+        id: element['id'],
+        longitude: element['longitude'],
+        latitude: element['latitude'],
+        ville: element['ville'].toLowerCase(),
+        cp: element['cp'],
+        adresse: element['adresse'],
       };
 
       gazole ? (Res.Gazole = gazole) : null;
@@ -97,7 +94,7 @@ route.get("/", async (req, res) => {
   }
 
   // send results
-  return res.status(200).json({ result, listCityName });
+  return res.status(200).json({result, listCityName});
 });
 
 module.exports = route;
