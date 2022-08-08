@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node --max-old-space-size=2000 index.js"
+    "start": "node --max-old-space-size=2000 index.js",
+    "lint:fix": "eslint */*.js --fix"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,8 @@
     "xml2json": "^0.12.0"
   },
   "devDependencies": {
+    "eslint": ">=5.16.0",
+    "eslint-config-google": "^0.14.0",
     "nodemon": "^2.0.19"
   }
 }
