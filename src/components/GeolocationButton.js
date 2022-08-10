@@ -14,19 +14,19 @@ const GeolocationButton = ({ onClick }) => {
     function success(pos) {
       const crd = pos.coords;
 
-      console.log("Your current position is:");
-      console.log(`Latitude : ${crd.latitude}`);
-      console.log(`Longitude: ${crd.longitude}`);
-      console.log(`More or less ${crd.accuracy} meters.`);
+      console.log(`précision : ${crd.accuracy}`);
       superagent
         .get(
-          `${process.env.REACT_APP_URL_API}/geocode?latitude=${crd.latitude}&longitude=${crd.longitude}`
+          `http://api.openweathermap.org/geo/1.0/reverse?lat=${crd.latitude}&lon=${crd.longitude}&limit=1&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
         )
         .then((response) => {
           if (!response.body || response.body.length === 0) return;
-          onClick(response.body[0][0]["name"].toLowerCase());
+          onClick(response.body[0]["name"].toLowerCase());
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+          alert("Service momentanément indisponible");
+        });
     }
 
     function error(err) {

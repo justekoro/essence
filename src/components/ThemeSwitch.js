@@ -59,7 +59,6 @@ const ThemeSwitch = () => {
   const [theme, setTheme] = useRecoilState(themeAtom);
   return (
     <FormGroup>
-    {console.log(theme)}
       <FormControlLabel
         control={<MaterialUISwitch sx={{ m: 1 }} />}
         label="thème"
