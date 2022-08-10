@@ -1,60 +1,97 @@
 import React from "react";
-import DataTable from "react-data-table-component";
 import Moment from "react-moment";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
+import DirectionsIcon from "@mui/icons-material/Directions";
 import AlertDialog from "./DialogAdress";
+import Button from "@mui/material/Button";
+import { DataGrid } from "@mui/x-data-grid";
 import "../styles/App.scss";
+import { Box } from "@mui/material";
+import { useGridApiContext } from "@mui/x-data-grid";
+import { useGridSelector } from "@mui/x-data-grid";
+import { styled } from "@mui/material";
+import { Pagination } from "@mui/material";
+import { PaginationItem } from "@mui/material";
+import { gridPageCountSelector } from "@mui/x-data-grid";
+import { gridPageSelector } from "@mui/x-data-grid";
+
+const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
+  "& .MuiDataGrid-renderingZone": {
+    maxHeight: "none !important",
+  },
+  "& .MuiDataGrid-cell": {
+    lineHeight: "unset !important",
+    maxHeight: "none !important",
+    whiteSpace: "normal",
+  },
+  "& .MuiDataGrid-row": {
+    maxHeight: "none !important",
+  },
+}));
+
+function CustomPagination() {
+  const apiRef = useGridApiContext();
+  const page = useGridSelector(apiRef, gridPageSelector);
+  const pageCount = useGridSelector(apiRef, gridPageCountSelector);
+
+  return (
+    <Pagination
+      color="primary"
+      variant="outlined"
+      shape="rounded"
+      page={page + 1}
+      count={pageCount}
+      // @ts-expect-error
+      renderItem={(props2) => <PaginationItem {...props2} disableRipple />}
+      onChange={(event, value) => apiRef.current.setPage(value - 1)}
+    />
+  );
+}
 
 const ResultComponents = ({ data }) => {
-  const customStyles = {
-    headRow: {
-      style: {
-        border: "none",
-      },
-    },
-    headCells: {
-      style: {
-        color: "#202124",
-        fontSize: "14px",
-      },
-    },
-    rows: {
-      style: {
-        overflow: "visible",
-      },
-      highlightOnHoverStyle: {
-        backgroundColor: "rgb(230, 244, 244)",
-        borderBottomColor: "#FFFFFF",
-        borderRadius: "25px",
-        outline: "1px solid #FFFFFF",
-      },
-    },
-    pagination: {
-      style: {
-        border: "none",
-      },
-    },
-  };
-
   const columns = [
     {
-      name: "Prix",
-      selector: (row) => {
-        return row.valeur;
+      field: "valeur",
+      headerName: "prix",
+      editable: false,
+      flex: 1,
+      valueGetter: (params) => {
+        return `${params.row.valeur}`;
       },
-      sortable: true,
     },
     {
-      name: "Adresse",
-      selector: (row) => {
-        return <div className="Adress-Container">
-          <div className="mobile"><AlertDialog adress={row.adresse} city={row.ville}/></div>
-          <div className="desktop">{row.adresse}</div>
-        </div>
+      field: "adresse",
+      headerName: "adresse",
+      editable: false,
+      flex: 1,
+      renderCell: (params) => {
+        return (
+          <div className="Adress-Container">
+            <div className="mobile">
+              <AlertDialog
+                adress={params.row.adresse}
+                city={params.row.ville}
+              />
+            </div>
+            <div className="desktop">
+              {params.row.adresse}
+              <Button
+                onClick={() =>
+                  window.open(
+                    `https://www.google.com/maps?q=${params.row.adresse} - ${params.row.ville}`
+                  )
+                }
+              >
+                <DirectionsIcon />
+              </Button>
+            </div>
+          </div>
+        );
       },
-      sortable: true,
     },
   ];
+
+  let id = 0;
 
   return (
     <div>
@@ -67,14 +104,23 @@ const ResultComponents = ({ data }) => {
         <div>
           {/* results */}
           <div className="Results">
-            <DataTable
-              pagination
-              columns={columns}
-              data={data}
-              customStyles={customStyles}
-              highlightOnHover
-              pointerOnHover
-            />
+            <Box sx={{ height: 400, width: "100%", marginTop: 4, marginBottom: 4 }}>
+              <StyledDataGrid
+                rows={data}
+                columns={columns}
+                pageSize={10}
+                disableColumnSelector={true}
+                disableColumnFilter={true}
+                disableColumnMenu={true}
+                disableExtendRowFullWidth={true}
+                components={{ Pagination: CustomPagination }}
+                sx={{ m: 2 }}
+                getRowId={(row) => {
+                  id++;
+                  return id;
+                }}
+              />
+            </Box>
           </div>
           {/* Update Date */}
           <div className="Update-Container">

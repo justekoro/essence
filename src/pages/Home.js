@@ -8,6 +8,8 @@ import SubmitButton from "../components/SubmitButton";
 import { Button } from "@mui/material";
 import ResultComponents from "../components/ResultComponents";
 import GeolocationButton from "../components/GeolocationButton";
+import ThemeSwitch from "../components/ThemeSwitch";
+import { Typography } from "@mui/material";
 
 function Home() {
   // state
@@ -110,7 +112,8 @@ function Home() {
             <div>
               {/* Title */}
               <div className="Title-Container">
-                <h1 className="Title">⛽ Essence tracker</h1>
+                <ThemeSwitch/>
+                <Typography className="Title" variant="h1">⛽ Essence tracker</Typography>
               </div>
               {/* All Inputs */}
               <div className="Inputs-Container">

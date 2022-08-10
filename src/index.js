@@ -1,13 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material";
+import { RecoilRoot, useRecoilValue } from "recoil";
+import themeAtom from "./atom/mode";
+import { CssBaseline } from "@mui/material";
+import { StyledEngineProvider } from "@mui/material";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const Index = () => {
+  const themeValue = useRecoilValue(themeAtom);
+
+  const theme = createTheme({
+    palette: {
+      mode: themeValue? "dark" : "light",
+    },
+  });
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <StyledEngineProvider injectFirst>
+      <RecoilRoot>
+        <Index />
+      </RecoilRoot>
+    </StyledEngineProvider>
   </React.StrictMode>
 );
 
