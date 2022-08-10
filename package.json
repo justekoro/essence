@@ -6,7 +6,7 @@
   "packageManager": "pnpm",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node --max-old-space-size=2000 index.js",
+    "start": "node index.js",
     "lint:fix": "eslint */*.js --fix"
   },
   "keywords": [],
@@ -18,7 +18,6 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "jszip": "^3.10.0",
-    "local-reverse-geocoder": "^0.12.1",
     "xml2json": "^0.12.0"
   },
   "devDependencies": {
