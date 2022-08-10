@@ -21,10 +21,20 @@ git clone git@github.com:justekoro/essence.git
 Dans le dossier 'api' taper `npm install` ou `pnpm install`.
 
 #### Client
-Rendez-vous dans le dossier créé lors du clonage du projet, et tapez la commande `npm install` ou `pnpm install` pour de meilleurs performance. Cela installera les modules nécessaires pour que le projet fonctionne.
+
+1.Rendez-vous dans le dossier créé lors du clonage du projet, et tapez la commande `npm install` ou `pnpm install` pour de meilleurs performance. Cela installera les modules nécessaires pour que le projet fonctionne.
+
+2.Crée un fichier .env il devrais ressembler à ceci :
+
+```env
+REACT_APP_URL_API=(l'url de l'api qui vas récuperer les données(prix de l'essence,etc..))
+REACR_APP_WEATHER_API_KEY=(clef de l'api qui vas récuperer le nom de la ville la plus proche de la position de l'utilisateur)
+```
+
+pour crée votre clef de l'api, allez sur [openweathermap](https://home.openweathermap.org/api_keys) crée vous un compte et crée une nouvelle clef.
 
 ### Lancement de l'api
-Pour fonctionner correctement, l'api doit être lancée. Pour cela, il suffit de lancer le serveur en console en tapant la commande `npm start` || `pnpm start` dans le dossier api.
+Pour que le client fonctionne correctement, l'api doit être lancée. Pour cela, il suffit de changer de branche(api) et taper la commande `npm start` || `pnpm start` dans le dossier racine.
 
 ### Lancement du serveur
 Dans le le dossier racine, vous pouvez lancer le serveur en tapant la commande `npm start` ou `pnpm start`.
