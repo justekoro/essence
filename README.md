@@ -27,8 +27,7 @@ Dans le dossier 'api' taper `npm install` ou `pnpm install`.
 2.Crée un fichier .env il devrais ressembler à ceci :
 
 ```env
-REACT_APP_URL_API=(l'url de l'api qui vas récuperer les données(prix de l'essence,etc..))
-REACR_APP_WEATHER_API_KEY=(clef de l'api qui vas récuperer le nom de la ville la plus proche de la position de l'utilisateur)
+REACT_APP_URL_API=(l'url de l'api qui vas récuperer les données(prix de l'essence,reverse geocoding))
 ```
 
 pour crée votre clef de l'api, allez sur [openweathermap](https://home.openweathermap.org/api_keys) crée vous un compte et crée une nouvelle clef.
