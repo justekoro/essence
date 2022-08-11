@@ -6,7 +6,7 @@ Un outil permettant de connaître le prix de l'essence le plus bas dans une vill
 
 ## Installation
 ### Pré-requis
-Pour pouvoir installer le projet, vous devez avoir téléchargé [nodejs](https://nodejs.org/en/) & [npm](https://www.npmjs.com/).
+Pour pouvoir installer le projet, vous devez avoir téléchargé [nodejs](https://nodejs.org/en/) & [pnpm](https://pnpm.io/fr/).
 
 ### Cloner le projet
 Vous pouvez cloner le projet sur votre machine en le téléchargeant depuis le bouton télécharger, ou simplement avec [git](https://git-scm.com/).
@@ -18,25 +18,18 @@ git clone git@github.com:justekoro/essence.git
 ### Installation des dépendances
 
 #### Api
-Dans le dossier 'api' taper `npm install` ou `pnpm install`.
+
+Pour plus d'information concernant l'api rendez-vous [ici](https://github.com/justekoro/essence/tree/api#readme)
 
 #### Client
 
-1.Rendez-vous dans le dossier créé lors du clonage du projet, et tapez la commande `npm install` ou `pnpm install` pour de meilleurs performance. Cela installera les modules nécessaires pour que le projet fonctionne.
+1.Rendez-vous dans le dossier créé lors du clonage du projet, et tapez la commande `pnpm install` pour de meilleurs performance. Cela installera les modules nécessaires pour que le projet fonctionne.
 
 2.Crée un fichier .env il devrais ressembler à ceci :
 
 ```env
 REACT_APP_URL_API=(l'url de l'api qui vas récuperer les données(prix de l'essence,reverse geocoding))
 ```
-
-pour crée votre clef de l'api, allez sur [openweathermap](https://home.openweathermap.org/api_keys) crée vous un compte et crée une nouvelle clef.
-
-### Lancement de l'api
-Pour que le client fonctionne correctement, l'api doit être lancée. Pour cela, il suffit de changer de branche(api) et taper la commande `npm start` || `pnpm start` dans le dossier racine.
-
-### Lancement du serveur
-Dans le le dossier racine, vous pouvez lancer le serveur en tapant la commande `npm start` ou `pnpm start`.
 
 ## Données
 Le projet ne recueille pas de données de la part de l'utilisateur.
