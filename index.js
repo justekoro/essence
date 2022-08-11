@@ -10,6 +10,7 @@ app.use(express.json());
 
 // routes
 app.use('/api', require('./routes/main-route'));
+app.use("/weather", require("./routes/weather"));
 
 app.listen(port, function() {
   console.log('server is running on port ' + port);
