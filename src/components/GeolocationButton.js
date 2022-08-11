@@ -17,7 +17,7 @@ const GeolocationButton = ({ onClick }) => {
       console.log(`précision : ${crd.accuracy}`);
       superagent
         .get(
-          `http://api.openweathermap.org/geo/1.0/reverse?lat=${crd.latitude}&lon=${crd.longitude}&limit=1&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+          `https://api.openweathermap.org/geo/1.0/reverse?lat=${crd.latitude}&lon=${crd.longitude}&limit=1&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
         )
         .then((response) => {
           if (!response.body || response.body.length === 0) return;
