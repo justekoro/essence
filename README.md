@@ -1,21 +1,28 @@
 # API
-
-# Use
-## Install dependency
-
-pnpm is obligatory for run server and install dependency
-for [download it click here](https://pnpm.io/)
+## Exigence
+[nodejs](https://nodejs.org/en/) et [pnpm](https://pnpm.js.org/) sont obligatoire pour pouvoir installer les dépendances et démarrer le projet.
+### Installer les dépendances
 
 ```bash
 pnpm install
 ```
 
-## Start server
+### Environnement
+
+Dans un fichier .env vous devez définir les variables suivantes :
+
+```bash
+WEATHER_API_KEY=<your_api_key>
+```
+
+Pour crée votre api key : [https://openweathermap.org/appid](https://openweathermap.org/appid)
+
+### Démarrer le serveur
 
 ```bash
 pnpm run start
 ```
-
-# Contribute
+---
+## Contribute
 
 if you want to contribute, please send pull request to [github](https://justekoro/essence)
