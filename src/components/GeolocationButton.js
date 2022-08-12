@@ -17,7 +17,7 @@ const GeolocationButton = ({ onClick }) => {
       console.log(`précision : ${crd.accuracy}`);
       superagent
         .get(
-          `${process.env.REACT_APP_API_URL}/weather?lat=${crd.latitude}&lon=${crd.longitude}`
+          `${process.env.REACT_APP_URL_API}/weather?lat=${crd.latitude}&lon=${crd.longitude}`
         )
         .then((response) => {
           if (!response.body || response.body.length === 0) return;
