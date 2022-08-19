@@ -1,0 +1,60 @@
+
+/* Not found */
+
+.Not_found_Container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.Not_Found_Text {
+  color: red;
+  text-align: center;
+}
+
+/* Error */
+.Error-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Result */
+.Result_Desktop {
+  display: block;
+}
+
+.Result_mobile {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .Result_Desktop {
+    display: none;
+  }
+  
+  .Result_mobile {
+    display: block;
+  }
+}
+
+/* Update Container */
+.Update_Container {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.moment {
+  margin-left: 5px;
+}

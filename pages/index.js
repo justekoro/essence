@@ -1,4 +1,4 @@
-import "../styles/App.scss";
+import styles from "../styles/Home.module.css";
 import superagent from "superagent";
 import { useState, useCallback } from "react";
 import { useEffect } from "react";
@@ -54,7 +54,7 @@ function Home() {
     async function fetchData() {
       try {
         await superagent
-          .get(`${process.env.REACT_APP_URL_API}/api`)
+          .get(`${window.location.href}/api/data`)
           .then((response) => {
             if (!response.body || response.body.length === 0)
               return setIsError(true);
@@ -82,10 +82,10 @@ function Home() {
     <div>
       {/* loading component */}
       {isLoading ? (
-        <div className="Loading-Container">
-          <svg className="loading" id="loading" viewBox="0 0 50 50">
+        <div>
+          <svg className={styles.loading_container} id="loading" viewBox="0 0 50 50">
             <circle
-              className="path"
+              className={styles.path}
               cx="25"
               cy="25"
               r="20"
@@ -111,13 +111,13 @@ function Home() {
           ) : (
             <div>
               {/* Title */}
-              <div className="Title-Container">
+              <div className={styles.Title_Container}>
                 <ThemeSwitch/>
-                <Typography className="Title" variant="h1">⛽ Essence tracker</Typography>
+                <Typography className={styles.Title} variant="h1">⛽ Essence tracker</Typography>
               </div>
               {/* All Inputs */}
-              <div className="Inputs-Container">
-                <div className="Group-Container">
+              <div className={styles.Inputs_Container}>
+                <div className={styles.Group_Container}>
                   {/* géolocalisation */}
                   <GeolocationButton
                     onClick={(value) => {
