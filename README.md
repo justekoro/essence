@@ -17,19 +17,19 @@ git clone git@github.com:justekoro/essence.git
 
 ### Installation des dépendances
 
-#### Api
-
-Pour plus d'information concernant l'api rendez-vous [ici](https://github.com/justekoro/essence/tree/api#readme)
-
-#### Client
-
 1.Rendez-vous dans le dossier créé lors du clonage du projet, et tapez la commande `pnpm install` pour de meilleurs performance. Cela installera les modules nécessaires pour que le projet fonctionne.
 
-2.Crée un fichier .env il devrais ressembler à ceci :
+### Api
+
+L'api est bundler avec le client,l'api est rendu en "server-side" et le client en "client-side".
+
+Dans le dosssier crée lors du clonage,veuillez crée un fichier `.env` et y ajouter les variables d'environnement suivantes:
 
 ```env
-REACT_APP_URL_API=(l'url de l'api qui vas récuperer les données(prix de l'essence,reverse geocoding))
+NEXT_PUBLIC_WEATHER_API_KEY=YOUR_WEATHER_API_KEY
 ```
+
+Pour crée une clé d'api pour la météo,veuillez vous rendre sur [openweathermap](https://openweathermap.org/).
 
 ## Données
 Le projet ne recueille pas de données de la part de l'utilisateur.
