@@ -5,7 +5,7 @@ import DirectionsIcon from "@mui/icons-material/Directions";
 import AlertDialog from "./DialogAdress";
 import Button from "@mui/material/Button";
 import { DataGrid } from "@mui/x-data-grid";
-import "../styles/App.scss";
+import styles from "../styles/Result.module.css";
 import { Box } from "@mui/material";
 import { useGridApiContext } from "@mui/x-data-grid";
 import { useGridSelector } from "@mui/x-data-grid";
@@ -66,14 +66,14 @@ const ResultComponents = ({ data }) => {
       flex: 1,
       renderCell: (params) => {
         return (
-          <div className="Adress-Container">
-            <div className="mobile">
+          <div>
+            <div className={styles.Result_mobile}>
               <AlertDialog
                 adress={params.row.adresse}
                 city={params.row.ville}
               />
             </div>
-            <div className="desktop">
+            <div className={styles.Result_Desktop}>
               {params.row.adresse}
               <Button
                 onClick={() =>
@@ -96,14 +96,14 @@ const ResultComponents = ({ data }) => {
   return (
     <div>
       {data.length === 0 ? (
-        <div className="Not-found-Container">
+        <div className={styles.Not_Found_Container}>
           <ErrorOutlineIcon sx={{ color: "red", height: 40, width: 40 }} />
-          <div className="Text">Aucune donnée trouvée.</div>
+          <div className={styles.Not_Found_Text}>Aucune donnée trouvée.</div>
         </div>
       ) : (
         <div>
           {/* results */}
-          <div className="Results">
+          <div>
             <Box sx={{ height: 400, width: "100%", marginTop: 4, marginBottom: 4 }}>
               <StyledDataGrid
                 rows={data}
@@ -123,9 +123,9 @@ const ResultComponents = ({ data }) => {
             </Box>
           </div>
           {/* Update Date */}
-          <div className="Update-Container">
-            <div className="">Mis à jour le: </div>
-            <Moment className="moment" format="DD/MM/YYYY">
+          <div className={styles.Update_Container}>
+            <div>Mis à jour le: </div>
+            <Moment className={styles.moment} format="DD/MM/YYYY">
               {Date.now()}
             </Moment>
           </div>

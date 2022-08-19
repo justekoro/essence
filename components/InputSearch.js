@@ -1,13 +1,13 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import TextField from '@mui/material/TextField';
-import Autocomplete, { autocompleteClasses } from '@mui/material/Autocomplete';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import ListSubheader from '@mui/material/ListSubheader';
-import Popper from '@mui/material/Popper';
-import { useTheme, styled } from '@mui/material/styles';
-import { VariableSizeList } from 'react-window';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+import PropTypes from "prop-types";
+import TextField from "@mui/material/TextField";
+import Autocomplete, { autocompleteClasses } from "@mui/material/Autocomplete";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import ListSubheader from "@mui/material/ListSubheader";
+import Popper from "@mui/material/Popper";
+import { useTheme, styled } from "@mui/material/styles";
+import { VariableSizeList } from "react-window";
+import Typography from "@mui/material/Typography";
 
 const LISTBOX_PADDING = 8; // px
 
@@ -19,7 +19,7 @@ function renderRow(props) {
     top: style.top + LISTBOX_PADDING,
   };
 
-  if (dataSet.hasOwnProperty('group')) {
+  if (dataSet.hasOwnProperty("group")) {
     return (
       <ListSubheader key={dataSet.key} component="div" style={inlineStyle}>
         {dataSet.group}
@@ -36,10 +36,12 @@ function renderRow(props) {
 
 const OuterElementContext = React.createContext({});
 
+// eslint-disable-next-line react/display-name
 const OuterElementType = React.forwardRef((props, ref) => {
   const outerProps = React.useContext(OuterElementContext);
   return <div ref={ref} {...props} {...outerProps} />;
-});
+  }
+);
 
 function useResetCache(data) {
   const ref = React.useRef(null);
@@ -52,7 +54,10 @@ function useResetCache(data) {
 }
 
 // Adapter for react-window
-const ListboxComponent = React.forwardRef(function ListboxComponent(props, ref) {
+const ListboxComponent = React.forwardRef(function ListboxComponent(
+  props,
+  ref
+) {
   const { children, ...other } = props;
   const itemData = [];
   children.forEach((item) => {
@@ -61,7 +66,7 @@ const ListboxComponent = React.forwardRef(function ListboxComponent(props, ref) 
   });
 
   const theme = useTheme();
-  const smUp = useMediaQuery(theme.breakpoints.up('sm'), {
+  const smUp = useMediaQuery(theme.breakpoints.up("sm"), {
     noSsr: true,
   });
 
@@ -69,7 +74,7 @@ const ListboxComponent = React.forwardRef(function ListboxComponent(props, ref) 
   const itemSize = smUp ? 36 : 48;
 
   const getChildSize = (child) => {
-    if (child.hasOwnProperty('group')) {
+    if (child.hasOwnProperty("group")) {
       return 48;
     }
 
@@ -112,8 +117,8 @@ ListboxComponent.propTypes = {
 
 const StyledPopper = styled(Popper)({
   [`& .${autocompleteClasses.listbox}`]: {
-    boxSizing: 'border-box',
-    '& ul': {
+    boxSizing: "border-box",
+    "& ul": {
       padding: 0,
       margin: 0,
     },
