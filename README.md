@@ -1,4 +1,5 @@
 [![test](https://github.com/justekoro/essence/actions/workflows/test.yml/badge.svg)](https://github.com/justekoro/essence/actions/workflows/test.yml)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fjustekoro%2Fessence&env=NEXT_PUBLIC_WEATHER_API_URL&envDescription=weather%20api%20url%20is%20required%20for%20geolocation%20user%2Capi%20key%20is%20free&envLink=https%3A%2F%2Fhome.openweathermap.org%2Fapi_keys&project-name=essence-tracker&repo-name=essence&redirect-url=https%3A%2F%2Fessence.vercel.com&demo-title=essence%20tracker%20offial%20instance&demo-description=official%20instance%20for%20host%20essence%20tracker&demo-url=http%3A%2F%2Fess.krbk.dev&demo-image=https%3A%2F%2Fi.imgur.com%2FP4rEDAK.png&skippable-integrations=1)
 # [ess.krbk.dev](https://ess.krbk.dev)
 Un outil permettant de connaître le prix de l'essence le plus bas dans une ville.
 
