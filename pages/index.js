@@ -53,8 +53,10 @@ function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
+        // check api url default is ovveride by .env eg: not use vercel provider or don't want use serverless function
+        const url = process.env.NEXT_PUBLIC_API_URL? `${process.env.NEXT_PUBLIC_API_URL}/api` : `${window.location.href}/api/data`  
         await superagent
-          .get(`${window.location.href}/api/data`)
+        .get(url)
           .then((response) => {
             if (!response.body || response.body.length === 0)
               return setIsError(true);
