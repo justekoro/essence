@@ -102,6 +102,12 @@ Une fonctionnalité à ajouter, un bug à corriger, ou une suggestion pour amél
 ## Licence
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
+### Twemoji
+
+Copyright 2020 Twitter, Inc and other contributors\
+Code licensed under the MIT License: http://opensource.org/licenses/MIT\
+Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/\
+
 ## Credits
 <a href="https://github.com/jokay03J">jokay03J: passage du site en react</a>
 <a href="https://github.com/justekoro">justekoro: idée & concept original</a>
