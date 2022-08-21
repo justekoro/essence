@@ -15,10 +15,10 @@ const GeolocationButton = ({ onClick }) => {
       const crd = pos.coords;
 
       console.log(`précision : ${crd.accuracy}`);
+      // check api url default is ovveride by .env eg: not use vercel provider or don't want use serverless function
+      const url = process.env.NEXT_PUBLIC_API_URL? `${process.env.NEXT_PUBLIC_API_URL}/weather?lat=${crd.latitude}&lon=${crd.longitude}` : `${window.location.href}/api?lat=${crd.latitude}&lon=${crd.longitude}`
       superagent
-        .get(
-          `${window.location.href}/weather?lat=${crd.latitude}&lon=${crd.longitude}`
-        )
+        .get(url)
         .then((response) => {
           if (!response.body || response.body.length === 0) return;
           onClick(response.body[0]["name"].toLowerCase());
