@@ -28,6 +28,7 @@ git clone git@github.com:justekoro/essence.git
 
 ### Api
 
+
 L'api est bundler avec le client,l'api est rendu en "server-side" et le client en "client-side".\
 Si vous ne voulez pas que l'api soit bundler avec le client,vous pouvez modifier la variable d'environnement `NEXT_PUBLIC_API_URL` dans le fichier `.env` et mettre l'url de l'api.
 Vous pouvez trouver le code source de l'api directement dans la branche `api` du projet.	
@@ -40,6 +41,7 @@ NEXT_PUBLIC_API_URL=API URL (OPTIONAL)
 ```
 
 Pour crée une clé d'api pour la météo,veuillez vous rendre sur [openweathermap](https://openweathermap.org/).
+
 
 ## Lancement du projet
 Pour déployer le projet,plusieurs méthode s'offre à vous:
@@ -64,7 +66,6 @@ Cela fonctionne à peut prêt pareil que pour deployer sur railway, vous devez a
 Pour déployer l'api,veuillez vous rendre dans la branche `api` et suivre les instructions du fichier `README.md`.\
 Pour déployer le client,veuillez vous rendre dans la branche `main` et suivre les instructions du fichier `README.md`.\
 **important**: vous devez modifier la variable d'environnement `NEXT_PUBLIC_API_URL` dans le fichier `.env` et mettre l'url de l'api que vous venez de déployer sans cela le client vas essayer de chercher l'api bundler avec le client(serverless functions).
-
 
 ## Données
 Le projet ne recueille pas de données de la part de l'utilisateur.
