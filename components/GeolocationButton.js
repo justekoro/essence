@@ -16,7 +16,7 @@ const GeolocationButton = ({ onClick }) => {
 
       console.log(`précision : ${crd.accuracy}`);
       // check api url default is ovveride by .env eg: not use vercel provider or don't want use serverless function
-      const url = process.env.NEXT_PUBLIC_API_URL? `${process.env.NEXT_PUBLIC_API_URL}/weather?lat=${crd.latitude}&lon=${crd.longitude}` : `${window.location.href}/api?lat=${crd.latitude}&lon=${crd.longitude}`
+      const url = process.env.NEXT_PUBLIC_API_URL? `${process.env.NEXT_PUBLIC_API_URL}/weather?lat=${crd.latitude}&lon=${crd.longitude}` : `${window.location.href}/api/weather?lat=${crd.latitude}&lon=${crd.longitude}`
       superagent
         .get(url)
         .then((response) => {
