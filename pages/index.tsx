@@ -8,6 +8,7 @@ import { useDebounce } from "@uidotdev/usehooks";
 import { Input } from "@/components/ui/input";
 import { InfoIcon } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Label } from "@/components/ui/label";
 
 function Home() {
   // state
@@ -28,9 +29,12 @@ function Home() {
           onPostCodeFound={(postalcode) => setSearchValue(postalcode)}
         />
         {/* search */}
+        <Label htmlFor="postCode" className="sr-only">Entrer un code postal</Label>
         <Input
           value={searchValue}
           type="number"
+          id="postCode"
+          placeholder="Entrer un code postal"
           onChange={(e) => setSearchValue(e.currentTarget.value)}
         />
         {/* type fuel input */}
