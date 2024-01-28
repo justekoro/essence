@@ -4,7 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 const SelectTypeFuel = ({ value, onChange }: { value: string, onChange: (value: string) => void }) => {
   return (
     <Select defaultValue="gazole" value={value} onValueChange={onChange}>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[180px]" title="Sélectionner un type d'essence">
         <SelectValue placeholder="Type d'essence" />
       </SelectTrigger>
       <SelectContent>

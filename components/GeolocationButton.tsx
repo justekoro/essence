@@ -48,6 +48,7 @@ const GeolocationButton = ({ onPostCodeFound }: GeolocationButtonI) => {
 
   return (
     <Button
+      title="Me géolocaliser"
       onClick={Submit}
     >
       <LocateIcon />

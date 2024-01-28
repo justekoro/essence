@@ -23,7 +23,7 @@ const ThemeSwitch = ({ className, ...props }: HtmlHTMLAttributes<HTMLElement>) =
   return (
     <div className={cn("flex items-center gap-1", className)} {...props}>
       <Sun />
-      <Switch checked={theme === "light" ? false : true} onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")} />
+      <Switch title="Thème" checked={theme === "light" ? false : true} onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")} />
       <Moon />
     </div>
   );
