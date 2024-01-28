@@ -8,11 +8,11 @@ const SelectTypeFuel = ({ value, onChange }: { value: string, onChange: (value: 
         <SelectValue placeholder="Type d'essence" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="gazole">Gazole</SelectItem>
-        <SelectItem value="e85">E85</SelectItem>
-        <SelectItem value="e10">E10</SelectItem>
-        <SelectItem value="sp95">SP95</SelectItem>
-        <SelectItem value="gplc">GPLc</SelectItem>
+        <SelectItem value="Gazole">Gazole</SelectItem>
+        <SelectItem value="E85">E85</SelectItem>
+        <SelectItem value="E10">E10</SelectItem>
+        <SelectItem value="SP95">SP95</SelectItem>
+        <SelectItem value="GPLc">GPLc</SelectItem>
       </SelectContent>
     </Select>
 
