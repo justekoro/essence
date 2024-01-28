@@ -5,9 +5,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class"
-      defaultTheme="system"
       enableSystem
-      disableTransitionOnChange>
+      defaultTheme="system">
       <Component {...pageProps} />
     </ThemeProvider>
   )
