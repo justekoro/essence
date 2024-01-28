@@ -46,7 +46,7 @@ export const columns: ColumnDef<Result>[] = [
     accessorKey: "adresse",
     header: "Adresse",
     cell: ({ cell }) => {
-      return (<div className="flex items-center justify-between gap-2">{cell.getValue() as string} <Button asChild className="hidden md:block"><Link href={"https://www.google.fr/maps?q=" + cell.getValue()} target="_blank"><Compass /></Link></Button></div>)
+      return (<div className="flex items-center justify-between gap-2">{cell.getValue() as string} <Button asChild className="hidden md:block"><Link href={"https://www.google.fr/maps?q=" + cell.getValue()} target="_blank" aria-label="Ouvrir sur google Maps"><Compass /></Link></Button></div>)
     },
   }
 ]
