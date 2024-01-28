@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Head from "next/head";
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -15,7 +16,13 @@ function App({ Component, pageProps }: AppProps) {
 function Index({ Component, pageProps }: AppProps) {
 
   return (
-    <App Component={Component} {...pageProps} />
+    <>
+      <Head>
+        <title>Essence Tracker</title>
+        <meta name="description" content="Cherche l'essence la moins chère dans toute la France." />
+      </Head>
+      <App Component={Component} {...pageProps} />
+    </>
   );
 }
 
