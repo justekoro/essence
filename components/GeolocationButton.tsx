@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { LocateIcon } from "lucide-react"
 
 interface GeolocationButtonI {
-  onPostalCodeFound: (code: string) => void;
+  onPostCodeFound: (code: string) => void;
 }
 
 interface ResponseI {
@@ -18,7 +18,7 @@ interface ResponseI {
   }[]
 }
 
-const GeolocationButton = ({ onPostalCodeFound }: GeolocationButtonI) => {
+const GeolocationButton = ({ onPostCodeFound }: GeolocationButtonI) => {
   const Submit = () => {
     const options = {
       enableHighAccuracy: true,
@@ -29,11 +29,12 @@ const GeolocationButton = ({ onPostalCodeFound }: GeolocationButtonI) => {
     async function success(pos: GeolocationPosition) {
       const crd = pos.coords;
 
-      console.log(`précision : ${crd.accuracy}`);
+      // fetch reverse geocoding to get postcode
       const res = await fetch(`https://api-adresse.data.gouv.fr/reverse/?lon=${crd.longitude}&lat=${crd.latitude}&type=street`)
       const data: ResponseI = await res.json();
+      // if postcode was found, run function passed as props
       if (data.features[0].properties.postcode) {
-        onPostalCodeFound(data.features[0].properties.postcode);
+        onPostCodeFound(data.features[0].properties.postcode);
       }
     }
 
@@ -41,17 +42,16 @@ const GeolocationButton = ({ onPostalCodeFound }: GeolocationButtonI) => {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
 
+    // get postion of user
     navigator.geolocation.getCurrentPosition(success, error, options);
   };
 
   return (
-    <div>
-      <Button
-        onClick={Submit}
-      >
-        <LocateIcon />
-      </Button>
-    </div>
+    <Button
+      onClick={Submit}
+    >
+      <LocateIcon />
+    </Button>
   );
 };
 
